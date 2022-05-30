@@ -9,8 +9,8 @@ Other network architectures might follow as needed.
 
 ## Dependencies
 
- 1. NumPy [numpy]
- 2. PyTorch [pytorch]
+ 1. [NumPy] [numpy]
+ 2. [PyTorch] [pytorch]
 
 [numpy]: <https://numpy.org>
 [pytorch]: <https://pytorch.org>
