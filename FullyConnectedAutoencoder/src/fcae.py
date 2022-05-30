@@ -32,11 +32,10 @@ class FullyConnectedAutoencoder(nn.Module):
         s = x
         
         # notational convenience
-        widths = self.encode_layers
         a = self.activation_function
         
         # Iterate encoder layers
-        for w in widths:
+        for w in self.encode_layers:
             s = a(w(s))
             
         # Code c
@@ -50,15 +49,14 @@ class FullyConnectedAutoencoder(nn.Module):
         s = c
         
         # notational convenience
-        widths = self.decode_layers
         a = self.activation_function
 
         # Iterate decoder layers
-        for w in widths[:-1]:
+        for w in self.decode_layers[:-1]:
             s = a(w(s))
 
         # Reconstruction x_r
-        x_r = widths[-1](s)
+        x_r = self.decode_layers[-1](s)
         
         return x_r
     
