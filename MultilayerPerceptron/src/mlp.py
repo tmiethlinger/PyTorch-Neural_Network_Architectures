@@ -32,7 +32,7 @@ class MultiLayerPerceptron(nn.Module):
         a = self.activation_function
 
         # Iterate layers
-        for w in self.layers:
+        for w in self.layers[:-1]:
             s = a(w(s))
 
         # Output y
